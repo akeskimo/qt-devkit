@@ -1,0 +1,17 @@
+README
+VERSION
+TEMPLATE
+.bashrc
+.bash_aliases
+.welcome_msg
+.gitconfig
+.vmconfig/
+.ssh
+.PyCharmEdu*
+.vscode/
+.local/
+.mozilla/
+Documents/
+Desktop/
+.atom/
+.local/

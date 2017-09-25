@@ -1,0 +1,36 @@
+# Version
+
+This file contains version history of Ubuntu/Debian Qt Company devkit
+template.
+
+## [2.0] - 2017-Sep-25 - aapo.keskimolo@qt.io
+Template: devkit-linux-ubuntu1604-x86_64-2
+- Added qt-devkit.git repository
+- Moved the binary files and tools to qt-devkit.git repository
+
+## [1.0] - 2017-Aug-24 - aapo.keskimolo@qt.io
+Template: devkit-linux-ubuntu1604-x86_64-1
+- Added toolsets:
+   IRC Quassel Core Client 0.12.2
+   Google Chrome 60.0.3112.101
+   QtCreator 5.9.1
+   Pycharm 3.5.1
+   Visual Studio Code 1.15.1
+   Atom 1.19.2
+   Terminator 0.98
+   Squish 6.0.1
+- Enabled X SSH connection
+- Added welcome screen text
+- Improved vm_setup scripts
+- Pre-configured .gitconfig according to Qt Wiki instructions
+- Added local repositories:
+   qtqa/tqtc-coin-ci (cross-compiled)
+   qtsdk/qtsdk
+   qt/qt5 (initialized)
+   qt/qtrepotools
+   qtqa/gerrit-plugin-replication
+   qtqa/release-testing
+   qtqa/sysadmin
+   qtqa/testconfig
+   qtqa/tqtc-qt-rta
+   qtqa/tqtc-testconfig

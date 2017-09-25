@@ -1,0 +1,19 @@
+#!/bin/bash -e
+
+# Synchronize local directory to remote machine destination
+
+####### VARIABLES ###########
+
+script_dir=$(dirname $BASH_SOURCE)
+. $script_dir/config # load user configuration
+
+rsync_log=$script_dir/rsync.log
+ignore_file=$script_dir/ignore_modules
+
+####### FUNCTIONS ###########
+
+########## MAIN #############
+
+rsync -aqv --delete --exclude-from $ignore_file $src/ $dest/ --log-file=$rsync_log
+
+########## END #############

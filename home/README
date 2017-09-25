@@ -1,0 +1,63 @@
+# Readme
+
+This is documentation about Ubuntu/Debian Qt Company Devkit VM template.
+
+## To access the devkit VM:
+
+For Windows users:
+1. Run VMWare vSphere client
+   Download link: http://vsphereclient.vmware.com/vsphereclient/4/4/3/7/5/6/6/VMware-viclient-all-6.0.0-4437566.exe
+2. Home -> Inventory -> VMs and Templates -> IT-VC07-HKI.it.local -> Qt -> devkit -> Choose your VM
+3. Choose start VM
+4. Open console
+
+For Linux users:
+1. Connect via SSH (X11 forwarding needs to be enabled)
+   ssh -X qt@{devkit-ip-address}
+
+## Setting up the devkit for development
+
+### Easy setup (semi-automatic)
+
+For first time setup, the user can execute:
+   vm_setup
+
+This will initialize git global config, download ssh key+config from remote server and auto-configure sync-to-remote.
+
+### Setup SSH configuration for Gerrit (manual)
+
+If you have NOT setup a Gerrit account, you can follow the instructions:
+https://wiki.qt.io/Setting_up_Gerrit
+
+Quick setup for Gerrit:
+1. Remote copy pre-existing SSH keys to local machine:
+   scp username@server:/home/username/.ssh/id_rsa* ~/.ssh/
+2. Update the SSH config file with your user credentials
+   nano ~/.ssh/config
+3. Test Gerrit connection (welcome screen should be displayed)
+   ssh-add
+   ssh -v codereview.qt-project.org -p 29418
+
+### Configuration for Git (manual)
+
+Update Git configuration:
+git config --global user.name "Firstname Lastname"
+git config --global user.email "firstname.lastname@qt.io"
+
+Update remote urls in local repository, eg:
+cd ~/tqtc-coin-ci
+git config remote set-url origin ssh://usernamecodereview.qt-project.org:29418/qtqa/tqtc-coin-ci
+
+### Add Git repositories to the devkit
+
+1. Add project (example: qt/qtbase) to the project lists
+   echo qt/qtbase >> ~/bin/tools/projects
+2. Update local git repositories
+   vm_clone_repos
+
+### Synchronize Coin repository to Coin master server for private instance testing (manual)
+
+This script will transfer all git refs and Coin source files from the tqtc-coin-ci repository
+to a remote server (for example, vmbuilder). For detailed instructions, you may read the
+sync-to-remote manual:
+   ~/sync2vm/README

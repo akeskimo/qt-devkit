@@ -1,0 +1,24 @@
+## Setup instructions for remote sync
+
+This is a convenience that allows selectively syncing source files to a remote server.
+
+## First time setup
+
+1. Setup sync2vm for remote ssh connection
+   $ ssh-copy-id username@server
+   $ ssh username@server 'mkdir -p \$HOME/download/tqtc-coin-ci'
+
+2. Update sync2vm configuration file:
+   $ nano config
+
+3. Create alias for the remote sync for convenience
+   $ echo "alias sync2vm='~/sync2vm/sync2vm'" >> ~/.bash_aliases
+
+4. Test remote sync tool
+   $ sync2vm
+
+## Advanced usage
+
+To configure ignored files/directories:
+   $ nano ~/sync2vm/ignore_modules
+

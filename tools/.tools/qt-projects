@@ -1,0 +1,13 @@
+pyside/pyside-setup
+qtsdk/qtsdk
+qt/qt5
+qt/tqtc-qt5
+qt/qtrepotools
+qtqa/gerrit-plugin-replication
+qtqa/release-testing
+qtqa/sysadmin
+qtqa/testconfig
+qtqa/tqtc-qt-rta
+qtqa/tqtc-testconfig
+qt/qtqa
+tqtc-boot2qt/qt-automotive

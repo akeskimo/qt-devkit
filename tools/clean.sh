@@ -1,7 +1,6 @@
 #!/bin/bash -e
 
-# Clean up SSH and user-specific information
-# Author: Aapo Keskimolo <aapo.keskimolo@qt.io>
+# Clean up user-specific information
 
 rm $HOME/.ssh/id_rsa* && rm $HOME/.ssh/config
 git config --global --unset-all user.name

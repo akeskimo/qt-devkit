@@ -1,7 +1,6 @@
 #!/bin/bash -e
 
 # Clone devkit project repositories from Gerrit
-# Author: Aapo Keskimolo <aapo.keskimolo@qt.io>
 
 SCRIPT_PATH="`dirname \"$0\"`"
 

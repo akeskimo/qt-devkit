@@ -1,7 +1,6 @@
 #!/bin/bash -e
 
 # Setup VM for first time use
-# Author: Aapo Keskimolo <aapo.keskimolo@qt.io>
 
 SCRIPT_PATH="`dirname \"$0\"`"
 
@@ -55,8 +54,10 @@ function update_git_config() {
 
 function update_sync_to_remote() {
  # Sets up sync-to-remote via SSH/rsync
- string="s/username/$1/g"
- sed -i $string $HOME/qt-devkit/sync2vm/config
+ newconfig=~/.devkit-config/sync2vm.conf
+ cp ~/qt-devkit/sync2vm/config-template $newconfig
+ string="s/<username-to-replace>/$1/g"
+ sed -i $string $newconfig
 }
 
 

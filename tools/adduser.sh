@@ -1,7 +1,6 @@
 #!/bin/bash -e
 
 # Add new sudo user
-# Author: Aapo Keskimolo <aapo.keskimolo@qt.io>
 
 if [ -z "$1" ]; then
  echo "You must give user name as input argument."

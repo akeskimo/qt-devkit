@@ -51,7 +51,7 @@ git config remote set-url origin ssh://usernamecodereview.qt-project.org:29418/q
 ### Add Git repositories to the devkit
 
 1. Add project (example: qt/qtbase) to the project lists
-   echo qt/qtbase >> ~/bin/tools/projects 
+   echo qt/qtbase >> ~/bin/tools/projects
 2. Update local git repositories
    vm_clone_repos
 

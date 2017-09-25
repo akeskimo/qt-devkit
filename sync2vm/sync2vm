@@ -7,7 +7,7 @@
 script_dir=$(dirname $BASH_SOURCE)
 . $script_dir/config # load user configuration
 
-rsync_log=$script_dir/rsync.log
+rsync_log=/tmp/devkit/sync2vm-rsync.log
 ignore_file=$script_dir/ignore_modules
 
 ####### FUNCTIONS ###########

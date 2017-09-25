@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 # This script adds directory to .bashrc
-# # Author: Aapo Keskimolo <aapo.keskimolo@qt.io>
+
 
 # Args:
 # $1 ~ Absolute path of directory to add to PATH variable in .bashrc

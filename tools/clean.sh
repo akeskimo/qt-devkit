@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-# Clean up user-specific information
+# Clean up SSH and user-specific information
 # Author: Aapo Keskimolo <aapo.keskimolo@qt.io>
 
 rm $HOME/.ssh/id_rsa* && rm $HOME/.ssh/config

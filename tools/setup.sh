@@ -70,15 +70,15 @@ echo "Give your full name for Gerrit/Git (eg. John Doe) >> "
 read name
 echo "Give your user email for Gerrit/Git (eg. john.doe@qt.io) >> "
 read email
-if [ ! -z "$name" ] || [ ! -z "$email" ]; then
+if [ -z "$name" ] || [ -z "$email" ]; then
+ echo "Git configuration skipped."
+else
  update_git_config "$name" "$email"
  echo "Updating .gitconfig finished."
-else
- echo "No valid user info provided. Git configuration skipped."
 fi
 
 # download ssh from remote server and configure sync-to-remote with coin repository
-echo "Enter SSH server address for downloading .ssh config (for example: 10.212.3.36) >> "
+echo "Enter server address for downloading .ssh config (for example: 10.212.3.36) >> "
 read server
 if [ ! -z $server ]; then
  echo "Your username to login to $server >> "
@@ -90,4 +90,6 @@ if [ ! -z $server ]; then
  else
   echo "No valid SSH information provided. Downloading ssh keys skipped."
  fi
+else
+ echo "User ssh configuration skipped."
 fi

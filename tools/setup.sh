@@ -54,7 +54,7 @@ function update_git_config() {
 
 function update_sync_to_remote() {
  # Sets up sync-to-remote via SSH/rsync
- newconfig=~/.devkit-config/sync2vm.conf
+ newconfig=~/.devkit_config/sync2vm.conf
  cp ~/qt-devkit/sync2vm/config-template $newconfig
  string="s/<username-to-replace>/$1/g"
  sed -i $string $newconfig
@@ -62,6 +62,8 @@ function update_sync_to_remote() {
 
 
 ######## MAIN #########
+
+mkdir -p /tmp/devkit
 
 # update git global config
 echo "Give your full name for Gerrit/Git (eg. John Doe) >> "

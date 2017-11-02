@@ -5,7 +5,7 @@ TEMPLATE
 .bash_aliases
 .welcome_msg
 .gitconfig
-.devkit-config/
+.devkit_config/
 .ssh
 .PyCharmEdu*
 .vscode/

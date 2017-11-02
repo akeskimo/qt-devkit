@@ -18,7 +18,8 @@ SCRIPT_PATH="`dirname \"$0\"`"
 root=~  # root directory from where the relative paths start
 backup_src=~/qt-devkit/tools/.tools/backup-files
 local_backup_dir=/tmp/devkit/backups
-tarfilepath=$local_backup_dir/$(cat ~/qt-devkit/TEMPLATE)-$(date +"%Y%m%d").tar.gz
+mkdir -p $local_backup_dir
+tarfilepath=$local_backup_dir/$(cat ~/TEMPLATE)-$(date +"%Y%m%d").tar.gz
 
 cd $root
 

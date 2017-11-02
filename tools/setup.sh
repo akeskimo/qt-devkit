@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-# Setup VM for first time use
+# Setup devkit vm for first time use
 
 SCRIPT_PATH="`dirname \"$0\"`"
 
@@ -75,19 +75,17 @@ else
  echo "No valid user info provided. Git configuration skipped."
 fi
 
-# download ssh keys
-echo "Enter SSH server address from where to download private/public SSH keys (eg. 10.212.3.36 or press enter to skip) >> "
+# download ssh from remote server and configure sync-to-remote with coin repository
+echo "Enter SSH server address for downloading .ssh config (for example: 10.212.3.36) >> "
 read server
 if [ ! -z $server ]; then
  echo "Your username to login to $server >> "
  read username
-fi
-if [ ! -z $server ] && [ ! -z $username ]; then
- download_ssh_config_from_server "$server" "$username"
- echo "SSH key and config download finished."
- # update sync-to-remote
- update_sync_to_remote "$username"
- echo "Updating sync-to-remote config file finished."
-else
- echo "No valid SSH information provided. Downloading ssh keys skipped."
+ if [ ! -z $username ]; then
+  download_ssh_config_from_server "$server" "$username"
+  update_sync_to_remote "$username"
+  echo "Updating sync-to-remote config file finished."
+ else
+  echo "No valid SSH information provided. Downloading ssh keys skipped."
+ fi
 fi

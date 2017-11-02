@@ -5,7 +5,7 @@
 SCRIPT_PATH="`dirname \"$0\"`"
 
 root=~/repos  # destination of the cloned repositories
-repo_srcfile=~/.vmconfig/qtprojects  # source file that contains list of qt-projects
+repo_srcfile=~/.devkit-config/qtprojects  # source file that contains list of qt-projects
 
 mkdir -p $root
 

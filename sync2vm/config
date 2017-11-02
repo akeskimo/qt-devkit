@@ -2,4 +2,4 @@
 src=$HOME/tqtc-coin-ci
 
 # remote destination to where synchronize the source files
-dest=aakeskim@10.212.3.36:/home/aakeskim/download/tqtc-coin-ci
+dest=username@10.212.3.36:/home/username/download/tqtc-coin-ci

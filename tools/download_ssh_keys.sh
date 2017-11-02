@@ -1,7 +1,6 @@
 #!/bin/bash -e
 
 # Provision VM with user specific information
-# Author: Aapo Keskimolo <aapo.keskimolo@qt.io>
 
 if [ -z "$1" ]; then
     echo "You must give server address as input argument, eg: 10.212.3.36"

@@ -1,0 +1,16 @@
+tqtc-coin-ci/.git
+.vmconfig
+.profile
+.bash_personal
+.bashrc
+.bash_aliases
+.gitconfig
+.ssh/
+.PyCharmEdu*
+.vscode/
+.local/
+.mozilla/
+Documents/
+Desktop/
+.atom/
+.local/

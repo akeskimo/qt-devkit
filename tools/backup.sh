@@ -41,4 +41,8 @@ tar -cPf $tarfilepath $backup_files
 # copy tarfile to backup directory
 scp $tarfilepath $destination/
 
-echo "New backup:" $tarfilepath "->" $destination/$tarfile
+# inform user
+echo "Backup created:" $tarfilepath "->" $destination/$tarfile
+
+# remove local backup file
+rm $tarfilepath

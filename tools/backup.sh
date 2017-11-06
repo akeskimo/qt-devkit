@@ -16,7 +16,7 @@ fi
 SCRIPT_PATH="`dirname \"$0\"`"
 
 root=~  # root directory from where the relative paths start
-backup_src=~/.devkit_config/backup
+backup_src=~/.vmconfig/backup
 local_backup_dir=/tmp/devkit/backups
 mkdir -p $local_backup_dir
 tarfilepath=$local_backup_dir/$(cat ~/TEMPLATE)-$(date +"%Y%m%d").tar.gz

@@ -1,11 +1,7 @@
-README
-VERSION
-TEMPLATE
+.bash_personal
 .bashrc
 .bash_aliases
-.welcome_msg
 .gitconfig
-.vmconfig/
 .ssh
 .PyCharmEdu*
 .vscode/

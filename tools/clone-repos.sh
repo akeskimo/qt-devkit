@@ -5,11 +5,11 @@
 SCRIPT_PATH="`dirname \"$0\"`"
 
 root=~/repos  # destination of the cloned repositories
-repo_srcfile=~/.devkit-config/qtprojects  # source file that contains list of qt-projects
+repos_file=~/.devkit-config/repos  # source file that contains list of qt-projects
 
 mkdir -p $root
 
-for repo in $(cat $repo_srcfile); do
+for repo in $(cat $repos_srcfile); do
     destination=$root/$repo
     if [ ! -d "$destination" ]; then
         git clone ssh://codereview.qt-project.org:29418/$repo $destination

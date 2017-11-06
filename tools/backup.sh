@@ -16,14 +16,14 @@ fi
 SCRIPT_PATH="`dirname \"$0\"`"
 
 root=~  # root directory from where the relative paths start
-backup_src=~/qt-devkit/tools/.tools/backup-files
+backup_src=~/.devkit_config/backup
 local_backup_dir=/tmp/devkit/backups
 mkdir -p $local_backup_dir
 tarfilepath=$local_backup_dir/$(cat ~/TEMPLATE)-$(date +"%Y%m%d").tar.gz
 
 cd $root
 
-# remove files/folders that do not exist and display warning message
+# skip files/folders that do not exist
 tmp=
 for f in $(cat $backup_src); do
  if [ ! -f $f ] && [ ! -d $f ]; then
@@ -38,6 +38,6 @@ backup_files=$tmp
 tar -cPf $tarfilepath $backup_files
 
 # use rsync to upload (all) local backups to remote server
-rsync -avu $local_backup_dir $destination
+rsync -au $local_backup_dir $destination
 
 echo "New backup:" $tarfilepath "->" $destination

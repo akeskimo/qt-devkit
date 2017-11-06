@@ -12,4 +12,3 @@ username=$1
 sudo adduser $username
 sudo adduser $username sudo
 sudo chsh $username -s /bin/bash  # sets bash as default shell environment
-sudo chown $username:$username /home/$username -R

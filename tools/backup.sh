@@ -73,7 +73,7 @@ backup_files=$tmp
 tar -cPf $tarfilepath $backup_files
 
 # copy tarfile to backup directory
-scp $tarfilepath $username@$server:$destination_dir/
+scp $tarfilepath $username@$server:$location/
 
 # inform user
 echo "Backup uploaded:"

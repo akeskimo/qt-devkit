@@ -3,13 +3,12 @@
 # Clone devkit project repositories from Gerrit
 
 SCRIPT_PATH="`dirname \"$0\"`"
-
 root=~/repos  # destination of the cloned repositories
-repos_file=~/.devkit-config/repos  # source file that contains list of qt-projects
+repos_file=~/.vmconfig/repos  # source file that contains list of qt-projects
 
 mkdir -p $root
 
-for repo in $(cat $repos_srcfile); do
+for repo in $(cat $repos_file); do
     destination=$root/$repo
     if [ ! -d "$destination" ]; then
         git clone ssh://codereview.qt-project.org:29418/$repo $destination

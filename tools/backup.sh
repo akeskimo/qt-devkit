@@ -10,11 +10,11 @@ local_backup_dir=/tmp/devkit/backups
 
 . $backup_config_file  # load backup configuration file
 
-if [ $1 == "source" ]; then
+if [[ $1 == "source" ]]; then
  echo $backup_source_file:
  cat $backup_source_file
  exit 0
-elif [ $1 == "upload" ]; then
+elif [[ $1 == "upload" ]]; then
  if [ -z $username ]; then
   echo "You must define 'username' variable in $backup_config_file"
   exit 1
@@ -25,15 +25,15 @@ elif [ $1 == "upload" ]; then
   echo "You must define 'location' variable in $backup_config_file"
   exit 1
  fi
-elif [ $1 == "list" ]; then
+elif [[ $1 == "list" ]]; then
  echo $username@$server:$location:
  ssh $username@$server "ls -l $location"
  exit 0
-elif [ $1 == "config" ]; then
+elif [[ $1 == "config" ]]; then
  echo $backup_config_file:
  cat $backup_config_file
  exit 0
-elif [ $1 == "restore" ]; then
+elif [[ $1 == "restore" ]]; then
  backup_files=($(ssh $username@$server "ls $location"))
  echo "Choose backup to restore:"
  for f in $(seq 1 ${#backup_files[@]}); do

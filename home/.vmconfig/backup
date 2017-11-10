@@ -1,4 +1,5 @@
 tqtc-coin-ci/.git
+~/tqtc-coin-ci/.idea/
 .vmconfig
 .profile
 .bash_personal
@@ -6,10 +7,8 @@ tqtc-coin-ci/.git
 .bash_aliases
 .gitconfig
 .ssh/
-.PyCharmEdu*
-.vscode/
+.PyCharmEdu3.5/config/
 .local/
-.mozilla/
 Documents/
 Desktop/
 .atom/

@@ -45,7 +45,7 @@ elif [[ $1 == "restore" ]]; then
  download_file=${backup_files[$(( $file - 1 ))]}
  scp $username@$server:$location/$download_file ~
  cd ~ && tar -xvf $download_file && rm ~/$download_file
- echo "Backup restored."
+ echo "Backup file $download_file extracted in $(pwd)"
  exit 0
 else
  echo "Accepted arguments: list, upload, source, restore"

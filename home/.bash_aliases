@@ -7,6 +7,7 @@ alias vm_clean="~/qt-devkit/tools/clean.sh"
 alias vm_setup="~/qt-devkit/tools/setup.sh"
 alias vm_backup=call_backup  # @ arg
 alias sync2vm="~/qt-devkit/sync2vm/sync2vm"
+alias runwww="rm -rf www/ && make www_content && ./run_ci -r --skip-make"
 
 function call_backup() {
  ~/qt-devkit/tools/backup.sh $@

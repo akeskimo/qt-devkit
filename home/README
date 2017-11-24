@@ -2,6 +2,16 @@
 
 This is documentation about Ubuntu/Debian Qt Company Devkit VM template.
 
+## Configuration files
+.bash_aliases   Aliases that are loaded by .bashrc.
+.bash_prompt    Highlight and git custom prompt.
+.bashrc         Setup for devkit specific bash.
+README          This file that contains information about the template.
+TEMPLATE        Base template name.
+VERSION         Changelog for base template history.
+.vmconfig       Devkit tools configuration files.
+.welcome_msg    Displayed message when logging in with SSH.
+
 ## To access the devkit VM:
 
 For Windows users:

@@ -14,8 +14,8 @@ ignore_file=$script_dir/ignore_modules
 ########## MAIN #############
 
 # load sync-to-remote configuration
-if [ -f ~/.devkit_config/sync2vm.conf ]; then
- . ~/.devkit_config/sync2vm.conf
+if [ -f ~/.vmconfig/sync2vm.conf ]; then
+ . ~/.vmconfig/sync2vm.conf
 else
  . $script_dir/config
 fi

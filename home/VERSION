@@ -3,7 +3,7 @@
 This file contains version history of Ubuntu/Debian Qt Company devkit
 template.
 
-## [2.0] - 2017-Sep-25 - aapo.keskimolo@qt.io
+## [2.0] - 2017-Nov-6 - aapo.keskimolo@qt.io
 Template: devkit-linux-ubuntu1604-x86_64-2
 - Added qt-devkit.git repository
 - Moved the binary files and tools to qt-devkit.git repository

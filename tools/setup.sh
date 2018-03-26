@@ -54,7 +54,7 @@ function update_git_config() {
 
 function update_sync_to_remote() {
  # Sets up sync-to-remote via SSH/rsync
- newconfig=~/.devkit_config/sync2vm.conf
+ newconfig=~/.vmconfig/sync2vm.conf
  cp ~/qt-devkit/sync2vm/config-template $newconfig
  string="s/<username-to-replace>/$1/g"
  sed -i $string $newconfig

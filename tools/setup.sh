@@ -50,6 +50,8 @@ function update_git_config() {
  git config --global alias.co checkout
  git config --global alias.ann blame
  git config --global alias.st status
+ git config --global alias.unstage 'reset HEAD --'
+ git config --global alias.last 'log -1 HEAD'
 }
 
 function update_sync_to_remote() {

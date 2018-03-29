@@ -17,6 +17,7 @@ ignore_file=$script_dir/ignore_modules
 if [ -f ~/.vmconfig/sync2vm.conf ]; then
  . ~/.vmconfig/sync2vm.conf
 else
+ echo "Config file not found: falling back to config in repository"
  . $script_dir/config
 fi
 

@@ -1,5 +1,5 @@
 # local repository with coin development code
 src=$HOME/tqtc-coin-ci
 
-# remote destination to where synchronize the source files
-dest=username@10.212.3.36:/home/username/download/tqtc-coin-ci
+# remote destination to where synchronize the source files to
+dest=USERNAME@10.212.3.36:/home/USERNAME/download/tqtc-coin-ci

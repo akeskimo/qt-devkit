@@ -42,7 +42,13 @@ function update_git_config() {
  git config --global core.pager "less -FRSX"
 
  # enable global git template
- git config --global commit.template $HOME/repos/qt/qt5/.commit-template
+ commit_template=$HOME/qt-project/qt/qt5/.commit-template
+ if [ -f $commit_template ]; then
+  git config --global commit.template $commit_template
+ else
+  echo WARNING: Template file $commit_template not found. Not updating commit template.
+  echo git config --global commit.template $commit_template
+ fi
 
  # set git aliases
  git config --global alias.di diff
@@ -56,10 +62,11 @@ function update_git_config() {
 
 function update_sync_to_remote() {
  # Sets up sync-to-remote via SSH/rsync
- newconfig=~/.vmconfig/sync2vm.conf
- cp ~/qt-devkit/sync2vm/config-template $newconfig
- string="s/<username-to-replace>/$1/g"
- sed -i $string $newconfig
+ config=$HOME/.vmconfig/sync2vm.conf
+ QT_DEVKIT_PATH=$(git rev-parse --show-toplevel)
+ cp $QT_DEVKIT_PATH/sync2vm/config-template $config
+ string="s/USERNAME/$1/g"
+ sed -i $string $config
 }
 
 

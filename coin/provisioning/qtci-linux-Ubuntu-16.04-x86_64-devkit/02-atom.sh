@@ -1,9 +1,7 @@
 #!/bin/bash -e
 
-# Install Atom on Ubuntu/Debian
-
-cd $HOME/Downloads
-
-PKG_NAME=atom-installer.github.com.deb
-FILE=/srv/pkg/$PKG_NAME
+PKG_NAME=atom-1.25.1.deb
+FILE=$HOME/Downloads/$PKG_NAME
+wget -O $FILE https://atom.io/download/deb
+sudo apt install gconf2 gconf-service gconf-service-backend
 sudo dpkg -i $FILE

@@ -128,3 +128,8 @@ fi
 if [ -f ~/.bash_personal ]; then
     . ~/.bash_personal
 fi
+
+# load coin python environment
+if [ -f ~/tqtc-coin-ci/env/bin/activate ]; then
+    . ~/tqtc-coin-ci/env/bin/activate
+fi

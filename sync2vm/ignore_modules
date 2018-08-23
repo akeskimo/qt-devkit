@@ -26,7 +26,7 @@ src/golang.org
 src/golang.org/x/tools
 src/local_machine_configuration.py
 src/remoteagentpool.ini
-src/rpc/gen-go
+#src/rpc/gen-go
 src/typings
 #src/www
 src/www/bower_components

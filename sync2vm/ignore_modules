@@ -33,3 +33,4 @@ src/www/bower_components
 src/www/build
 src/www/typings
 /www
+Pipfile.lock.sha1

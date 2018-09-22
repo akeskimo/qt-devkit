@@ -34,3 +34,4 @@ src/www/build
 src/www/typings
 /www
 Pipfile.lock.sha1
+src/rpc/gen-go/

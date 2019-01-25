@@ -1,6 +1,9 @@
 #!/bin/bash -e
 
-# Install Coin development kit
+# install google chrome from 3rd party source
 
-sudo apt install libgconf2-4 libnss3-1d libxss1
-dpkg -i /srv/pkg/google-chrome-stable_current_amd64.deb
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
+sudo apt-get update
+sudo apt-get install google-chrome-stable
+

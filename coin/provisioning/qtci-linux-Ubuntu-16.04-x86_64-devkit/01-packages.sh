@@ -1,16 +1,25 @@
 #!/bin/bash -e
 
+# install packages for development
+
+# update packages
+sudo add-apt-repository universe
 sudo apt upgrade
 sudo apt update
-sudo add-apt-repository universe
 
+# coin dependencies
 sudo apt install -y nodejs npm  virtualenv python3-dev python3-pip \
             python-sphinx cmake pkg-config flex bison tmux zip pigz \
             p7zip-full kcachegrind openconnect
 
+# screen
 sudo apt install -y cifs-utils screen
 
-sudo apt install inotify-tools
+# inotify
+sudo apt install -y inotify-tools
+
+# quassel irc
+sudo apt install -y quassel
 
 # qtcreator, documentation and examples
 sudo apt install -y build-essential qtcreator qt5-default

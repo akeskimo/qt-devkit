@@ -9,22 +9,10 @@ alias vm_setup=QT_DEVKIT_PATH/tools/setup.sh
 alias vm_backup=call_backup  # @+
 alias sync2vm=QT_DEVKIT_PATH/sync2vm/sync2vm
 
-# ci
-alias pst=print_state # @1
-alias runwww="rm -rf www/ && make www_content && ./run_ci -r --skip-make"
-
 function call_backup() {
  QT_DEVKIT_PATH/tools/backup.sh $@
 }
 
 function call_clone_repos {
  QT_DEVKIT_PATH/tools/clone-repos.sh $@
-}
-
-function print_state() {
- if [ ! -f "$1" ]; then
-  echo File does not exist: $1
-  return
- fi
- $HOME/tqtc-coin-ci/src/thrift_parser.py e $1
 }

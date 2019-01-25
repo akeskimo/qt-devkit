@@ -11,3 +11,5 @@ sudo apt install -y nodejs npm  virtualenv python3-dev python3-pip \
 sudo apt install -y cifs-utils screen
 
 sudo apt install inotify-tools
+
+sudo apt -y install quassel

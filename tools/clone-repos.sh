@@ -3,7 +3,7 @@
 # Clone devkit project repositories from Gerrit
 
 SCRIPT_PATH="`dirname \"$0\"`"
-root=~/repos  # destination of the cloned repositories
+root=~/qt-project  # destination of the cloned repositories
 repos_file=~/.vmconfig/repos  # source file that contains list of qt-projects
 
 mkdir -p $root

@@ -10,6 +10,7 @@ sudo apt update
 # coin dependencies
 sudo apt install -y nodejs npm python3-dev python3-sphinx cmake \
                     pkg-config flex bison tmux zip pigz p7zip-full
+                    python3-pip
 python3 -m pip install --user pip setuptools
 echo "export PATH=\$PATH:~/.local/bin" >> ~/.bashrc
 python3 -m pip install --user pipenv

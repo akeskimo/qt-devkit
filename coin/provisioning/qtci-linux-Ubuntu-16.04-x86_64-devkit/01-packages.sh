@@ -12,4 +12,6 @@ sudo apt install -y cifs-utils screen
 
 sudo apt install inotify-tools
 
-sudo apt -y install quassel
+# qtcreator, documentation and examples
+sudo apt install -y build-essential qtcreator qt5-default
+sudo apt install -y qt5-doc qt5-doc-html qtbase5-doc-html qtbase5-examples

@@ -48,3 +48,6 @@ FILE=$HOME/Downloads/$PKG_NAME
 wget -O $FILE https://go.microsoft.com/fwlink/?LinkID=760868
 sudo apt install gconf2-common libgconf-2-4
 sudo dpkg -i $FILE
+# enable watching large amount of files
+sudo echo fs.inotify.max_user_watches=524288 >> /etc/sysctl.conf
+sudo sysctl -p

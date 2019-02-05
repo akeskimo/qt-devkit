@@ -1,4 +1,3 @@
-__*
 .mypy*
 *~
 *.bak
@@ -35,3 +34,4 @@ src/www/typings
 /www
 Pipfile.lock.sha1
 src/rpc/gen-go/
+src/thrift/*.pyi

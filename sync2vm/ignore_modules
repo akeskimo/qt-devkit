@@ -1,4 +1,3 @@
-.mypy*
 *~
 *.bak
 bin
@@ -9,9 +8,11 @@ env/
 .gitmodules_update
 *.idea
 *.kate-swp
+.mypy*
 nameservice_port
 node_modules
 *.orig
+Pipfile.lock.sha1
 pkg
 *.pyc
 *.pyi
@@ -26,12 +27,11 @@ src/golang.org/x/tools
 src/local_machine_configuration.py
 src/remoteagentpool.ini
 #src/rpc/gen-go
+src/rpc/gen-go/
+src/thrift/*.pyi
 src/typings
 #src/www
 src/www/bower_components
 src/www/build
 src/www/typings
 /www
-Pipfile.lock.sha1
-src/rpc/gen-go/
-src/thrift/*.pyi

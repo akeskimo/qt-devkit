@@ -1,4 +1,3 @@
-.*
 *~
 *.bak
 bin
@@ -16,6 +15,7 @@ secrets
 src/git.apache.org
 src/github.com
 src/golang.org
+src/honnef.co
 src/local_machine_configuration.py
 src/remoteagentpool.ini
 src/rpc/gen-go/

@@ -22,4 +22,6 @@ src/rpc/gen-go/
 src/thrift/*.pyi
 src/www/build
 src/www/node_modules
+.idea/
+.vscode/
 /www

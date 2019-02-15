@@ -1,6 +1,9 @@
 # general
 alias nano="nano -c" # show line numbers by default when opening nano
 
+# git
+alias coin_git_remote_add_vmbuilder='cd ~/tqtc-coin-ci ; git remote add vmbuilder ssh://coin.intra.qt.io:/home/vmbuilder/qt-ci'
+
 # gerrit
 alias gerrit_ssh_interactive='prepend_to_each_command ssh codereview.qt-project.org -p 29418 gerrit'
 

@@ -1,18 +1,15 @@
 
 
-*** Welcome to Ubuntu/Debian Qt Company Devkit! ***
+*** Welcome to Ubuntu/Debian Qt Company CI Devkit! ***
 
-First time users may want to run the development setup:
+First time users may want to run:
  $ vm_setup
 
 For user information:
 /home/qt/README
 
-For information about the changelog and toolsets:
-/home/qt/VERSION
-
 
 With kind regards,
-Qt Development Team
+CI Team
 
 

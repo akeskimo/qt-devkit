@@ -1,1 +1,11 @@
-coin/provisioning/qtci-linux-Ubuntu-16.04-x86_64-devkit/01-packages.sh
+# Installs qt-devkit tooling for given platform.
+
+supported_platforms=(Ubuntu-18.04)
+
+if [ "$1" == "Ubuntu-18.04" ]; then
+ provision/Ubuntu-18.04-x86_64-devkit/install.sh
+else
+ echo "No install scripts found for:" $1
+ echo "Supported platforms:" ${supported_platforms[*]}
+ exit 1
+fi

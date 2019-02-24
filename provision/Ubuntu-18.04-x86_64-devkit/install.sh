@@ -18,7 +18,7 @@ echo "export PATH=\$PATH:~/.local/bin" >> ~/.bashrc
 python3 -m pip install --user pipenv
 
 # utilities
-sudo apt install -y cifs-utils screen quassel terminator
+sudo apt install -y cifs-utils screen quassel-client terminator
 
 # qtcreator, documentation and examples
 sudo apt install -y build-essential qtcreator qt5-default

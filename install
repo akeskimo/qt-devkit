@@ -1,11 +1,1 @@
-#!/bin/bash -e
-
-if [ "$1" == "provision" ]; then
- find coin/provisioning -name *-*.sh -exec sh {} \;
-elif [ "$1" == "home" ]; then
- QT_DEVKIT_PATH=$(git rev-parse --show-toplevel)
- cp -r $QT_DEVKIT_PATH/home/. $HOME/
- sed -i -e "s@QT_DEVKIT_PATH@$QT_DEVKIT_PATH@g" $HOME/.bash_aliases
-else
- echo Input argument must be either \'provision\' or \'home\'.
-fi
+coin/provisioning/qtci-linux-Ubuntu-16.04-x86_64-devkit/01-packages.sh

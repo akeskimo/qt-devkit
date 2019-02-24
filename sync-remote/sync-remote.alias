@@ -1,0 +1,1 @@
+alias sync-remote="rsync -av --delete --log-file=/tmp/sync-remote.log --exclude-from $HOME/sync-remote/tqtc-coin-ci.ignore $HOME/qt-project/qtqa/tqtc-coin-ci aakeskim@coin.intra.qt.io:/home/aakeskim/download/tqtc-coin-ci"

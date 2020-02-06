@@ -54,32 +54,35 @@ class GerritSSHClient:
             changes.append(change)
         return changes
 
-    def print_commits(self, commits: List[Change], key=None):
+    def print_commits(self, key=None):
+        commits = self.list_commits()
         if key is not None:
             commits = sorted(commits, key=key)
         for change in commits:
             print(change.currentPatchSet["revision"], change.subject)
 
 
+def print_commits(args):
+    config = Config(load_config())
+    gerrit = GerritSSHClient(config)
+
+    sorter = None
+    if args.sort_by:
+        if args.sort_by == "time":
+            sorter = lambda x: x.createdOn
+        elif args.sort_by == "subject":
+            sorter = lambda x: x.subject
+    gerrit.print_commits(sorter)
+
 if __name__ == "__main__":
 
     import argparse, sys
     parser = argparse.ArgumentParser(prog="Command line helper to display patches from Gerrit.")
-    parser.add_argument("--sort-by", dest="sort_by", choices=["time", "subject"], default="")
-    parser.add_argument("--print", dest="print", action="store_true")
+    parser.set_defaults(func=lambda x: parser.print_help())
+    subparsers = parser.add_subparsers(title="Commands")
+    print_parser = subparsers.add_parser("print")
+    print_parser.add_argument("--sort-by", dest="sort_by", choices=["time", "subject"], default="")
+    print_parser.set_defaults(func=print_commits)
+    
     args = parser.parse_args(sys.argv[1:])
-
-    config = Config(load_config())
-    gerrit = GerritSSHClient(config)
-
-    if args.print:
-        commits = gerrit.list_commits()
-        sorter = None
-        if args.sort_by:
-            if args.sort_by == "time":
-                sorter = lambda x: x.createdOn
-            elif args.sort_by == "subject":
-                sorter = lambda x: x.subject
-        gerrit.print_commits(commits, sorter)
-    else:
-        assert False, "No arguments provided. Exiting."
+    args.func(args)

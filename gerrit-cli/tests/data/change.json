@@ -1,0 +1,18 @@
+{
+    "project": "qtqa/tqtc-coin-ci",
+    "branch": "master",
+    "id": "I1efdfe6fcfe369fbfa8e160ad124587a7477b17c",
+    "number": 289564,
+    "subject": "Publisher: Do not retry gerrit commands with non-zero exit status",
+    "owner": {
+        "name": "Aapo Keskimolo",
+        "email": "aapo.keskimolo@qt.io",
+        "username": "aakeskimo"
+    },
+    "url": "https://codereview.qt-project.org/c/qtqa/tqtc-coin-ci/+/289564",
+    "commitMessage": "Publisher: Do not retry gerrit commands with non-zero exit status\n\nIf gerrit command fails with non-zero exit status that is very unlikely\nto ever work.\n\nChange-Id: I1efdfe6fcfe369fbfa8e160ad124587a7477b17c\n",
+    "createdOn": 1580996684,
+    "lastUpdated": 1581006732,
+    "open": true,
+    "status": "NEW"
+}

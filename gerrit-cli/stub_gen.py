@@ -28,8 +28,9 @@ def write_class(fh, data, class_name, indent=0):
 
 if __name__ == "__main__":
     import argparse, sys
-    parser = argparse.ArgumentParser(prog="Python stub generator for serializing input data.")
-    parser.add_argument("--input-file", help="Input filepath.")
+    parser = argparse.ArgumentParser(prog="Python stub generator.")
+    parser.add_argument("--input-file",
+        help="Input filepath.")
     parser.add_argument("-o", "--output-file",
         help="Output filepath.")
     parser.add_argument("--input-format", choices=["json"], default="json",
@@ -40,7 +41,8 @@ if __name__ == "__main__":
         help="Read input data from standard input.")
     args = parser.parse_args(sys.argv[1:])
 
-    assert args.stdin or args.input_file, "Argument --stdin or --input-file is required."
+    if args.stdin and args.input_file:
+        assert False, "You can only specify one input data source"
 
     if args.stdin:
         data = sys.stdin.read()

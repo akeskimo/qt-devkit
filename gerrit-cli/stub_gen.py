@@ -53,7 +53,7 @@ if __name__ == "__main__":
             fh = open(args.output_file, "w")
         else:
             fh = sys.stdout
-        
+
         fh.write("#/usr/bin/env python3\n")
 
         class_name = args.stub_class or obj.__class__.__name__

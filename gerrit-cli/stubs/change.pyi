@@ -1,14 +1,13 @@
 #/usr/bin/env python3
 
-
-class Parser
+class Change:
     def project() -> str:
     def branch() -> str:
     def id() -> str:
     def number() -> int:
     def subject() -> str:
 
-    class Owner
+    class Owner:
         def name() -> str:
         def email() -> str:
         def username() -> str:

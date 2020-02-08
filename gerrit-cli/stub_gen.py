@@ -10,7 +10,7 @@ class Parser:
 
 def write_class(fh, data, class_name, indent=0):
     fh.write("\n")
-    fh.write(indent * " " + "class " + class_name + "\n")
+    fh.write(indent * " " + "class " + class_name + ":\n")
 
     def write_property(fh, key, value, indent):
         class_name = value.__class__.__name__

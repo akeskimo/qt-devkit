@@ -49,11 +49,15 @@ if __name__ == "__main__":
     elif args.input_file:
         with open(args.input_file, "r") as fh:
             data = fh.read()
+    else:
+        print("No input source specified.")
+        sys.exit(1)
 
     if args.input_format == "json":
         dict_data = json.loads(data)
     else:
-        assert False, "Unsupported input format: %s" % args.input_format
+        print("Unsupported input format: %s" % args.input_format)
+        sys.exit(1)
 
     try:
         if args.output_file:

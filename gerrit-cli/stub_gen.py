@@ -29,24 +29,29 @@ def write_class(fh, data, class_name, indent=0):
 if __name__ == "__main__":
     import argparse, sys
     parser = argparse.ArgumentParser(prog="Python stub generator for serializing input data.")
-    parser.add_argument("data", help="Input data for creating stubs.")
+    parser.add_argument("--input-file", help="Input filepath.")
     parser.add_argument("-o", "--output-file",
-        help="Output file.")
-    parser.add_argument("--input-format", choices=["file", "text"], default="file",
-        help="Input data format (default=file).")
+        help="Output filepath.")
+    parser.add_argument("--input-format", choices=["json"], default="json",
+        help="Input data format (default=json).")
     parser.add_argument("--stub-class", default="Object",
         help="Class name for the python interface (default=Object).")
+    parser.add_argument("--stdin", action="store_true",
+        help="Read input data from standard input.")
     args = parser.parse_args(sys.argv[1:])
 
-    if args.input_format == "file":
-        with open(args.data, "r") as fh:
+    assert args.stdin or args.input_file, "Argument --stdin or --input-file is required."
+
+    if args.stdin:
+        data = sys.stdin.read()
+    elif args.input_file:
+        with open(args.input_file, "r") as fh:
             data = fh.read()
-    elif args.input_format == "text":
-        data = args.data
+
+    if args.input_format == "json":
+        dict_data = json.loads(data)
     else:
         assert False, "Unsupported input format: %s" % args.input_format
-
-    obj = Parser(data)
 
     try:
         if args.output_file:
@@ -56,7 +61,7 @@ if __name__ == "__main__":
 
         fh.write("#/usr/bin/env python3\n")
 
-        class_name = args.stub_class or obj.__class__.__name__
-        write_class(fh, obj.__dict__, class_name)
+        class_name = args.stub_class
+        write_class(fh, dict_data, class_name)
     finally:
         fh.close()

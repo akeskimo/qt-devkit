@@ -4,10 +4,6 @@
 
 import json
 
-class Parser:
-    def __init__(self, data):
-        self.__dict__ = json.loads(data)
-
 def write_class(fh, data, class_name, indent=0):
     fh.write("\n")
     fh.write(indent * " " + "class " + class_name + ":\n")

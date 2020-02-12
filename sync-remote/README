@@ -1,20 +1,8 @@
 SUMMARY
 
-Tool for transferring source files and git index to remote destination.
+Tool for transferring source files to remote destination. This is convenient for
+syncing git directory to a remote server.
 
 INSTALLATION
 
-1. Copy rsync files to home directory
-
-  mkdir $HOME/sync-remote
-  cp -r sync-remote/ $HOME
-
-2. Update sync-remote alias with your own configuration.
-
-  nano $HOME/sync.remote.alias
-
-3. Create alias and execute sync.
-
- . $HOME/sync-remote/sync.remote.alias
- sync-remote
-
+ ./alias_rsync.sh /your/repository username@ssh.server.com:/home/username/ >> ~/.bash_aliases

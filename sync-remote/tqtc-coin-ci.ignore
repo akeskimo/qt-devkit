@@ -26,4 +26,4 @@ src/www/node_modules
 .idea/
 .vscode/
 .env
-www/
+./www/
